@@ -16,5 +16,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         p_rigidbody.AddForce(new Vector2(1, 1) * moveSpeed);
+        float randomDirection = Random.Range(0, 2);
     }
 }
