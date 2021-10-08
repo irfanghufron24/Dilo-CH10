@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseControll : MonoBehaviour
 {
     public float moveSpeed;
-    public float moveConstraint = 5.5f;
+    public float moveConstraint;
     private Vector3 targetMove;
 
     private Rigidbody2D p_rigidbody;
@@ -13,6 +13,11 @@ public class MouseControll : MonoBehaviour
     private void Awake()
     {
         p_rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        moveConstraint = GameManager.Instance.areaConstraintValue;
     }
 
     private void Update()
