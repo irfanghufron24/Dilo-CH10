@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [Header("Box Coin Controller")]
     public int coinSpawn;
     [SerializeField] BoxSpawner boxSpawnerPrefab;
+    private List<BoxSpawner> boxSpawnerPool = new List<BoxSpawner>();
 
     [Header("Game area constraint")]
     public float areaConstraintValue = 8.5f;
@@ -56,4 +57,29 @@ public class GameManager : MonoBehaviour
         Score++;
         scoreText.text= $"Score : {Score}";
     }
+
+    public void RespawnBox() => StartCoroutine(ReSpawnBox());
+    IEnumerator ReSpawnBox()
+    {
+        yield return new WaitForSeconds(3);
+        BoxSpawner spawner = GetBox();
+        spawner.Spawn();
+    }
+
+    public BoxSpawner GetBox()
+    {
+        for (int i = 0; i < boxSpawnerPool.Count; i++)
+        {
+            if (!boxSpawnerPool[i].gameObject.activeSelf)
+            {
+                boxSpawnerPool[i].gameObject.SetActive(true);
+                return boxSpawnerPool[i];
+            }
+        }
+
+        BoxSpawner boxObject = Instantiate(boxSpawnerPrefab, transform);
+        boxSpawnerPool.Add(boxObject);
+        return boxObject;
+    }
+  
 }
