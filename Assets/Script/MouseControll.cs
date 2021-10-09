@@ -17,7 +17,7 @@ public class MouseControll : MonoBehaviour
 
     private void Start()
     {
-        moveConstraint = GameManager.Instance.areaConstraintValue;
+        
     }
 
     private void Update()
