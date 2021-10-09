@@ -39,4 +39,13 @@ public class MouseControll : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetMove, moveSpeed * Time.deltaTime);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            GameManager.Instance.AddScore();
+            gameObject.SetActive(false);
+            FindObjectOfType<GameManager>().EndGame();
+        }
+    }
 }
