@@ -1,6 +1,6 @@
 # Dilo-CH10
 ProblemSolving
-10 problem yang diselesaikan:
+**10 problem yang diselesaikan:**
 
 1.Membuat lingkaran hitam ditengah layar
 
@@ -20,6 +20,6 @@ ProblemSolving
 
 9.Mengembangkan 8 problem tadi.
 
-ProblemSolving Untuk Problem 9: Gunakan mouse untuk menggerakan bola dengan cara klik tempat yang dituju,Hindari bola merah saat mengumpulkan point jika terkena maka game restart
-
 10.Membuat build berisi menu selection untuk mengakses semua build
+
+**ProblemSolving Untuk Problem 9: Gunakan mouse untuk menggerakan bola dengan cara klik tempat yang dituju,Hindari bola merah saat mengumpulkan point jika terkena maka game restart**
